@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{currentPokemon?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Pokemon <ion-badge>{{currentPokemon?.id}}</ion-badge></ion-card-subtitle>
+      <ion-card-title>{{currentPokemon?.name}} <ion-badge>{{currentPokemon?.base_experience}}</ion-badge></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Height: {{currentPokemon?.height}}
+      Weitght: {{currentPokemon?.weight}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

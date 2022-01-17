@@ -1,20 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Pokemon
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-item-group>
+    <!-- <span *ngFor='let letter of letters'>
+      <ion-item-divider color="light">{{letter | uppercase}}</ion-item-divider>
+      <ion-item ion-item *ngFor="let item of getPokemonByChar(letter)"
+      (click)="itemSelected(item)"
+      [routerLink]="['/home/' + item.id]"> {{ item.name }}</ion-item>
+    </span> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <span *ngFor='let item of container'>
+      <ion-item-divider color="light">{{item.letter | uppercase}}</ion-item-divider>
+      <ion-item ion-item *ngFor="let pokemon of item.values"
+      (click)="itemSelected(pokemon)"
+      [routerLink]="['/home/' + pokemon.id]"> {{ pokemon.name }}</ion-item>
+    </span>
+
+  </ion-item-group>
 </ion-content>
+
+    <!-- <ion-list inset>
+      <button ion-item *ngFor="let pokemon of pokemons" (click)="itemSelected(pokemon)">
+        {{ pokemon.name }}
+      </button>
+    </ion-list> -->
+
+
